@@ -4,10 +4,9 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 
-class PublishManager(models.Model):
-    # @property
+class PublishedManager(models.Manager):
     def get_query(self):
-        return super(PublishManager,
+        return super(PublishedManager,
                      self).get_queryset()\
                           .filter(status='published')
 
@@ -30,7 +29,7 @@ class Post(models.Model):
                               choices=STATUS_CHOICES,
                               default='draft')
     objects = models.Manager()  # default manager
-    published = PublishManager()  # Our custom manager
+    published = PublishedManager()  # Our custom manager
 
     class Meta:
         ordering = ('-publish',)

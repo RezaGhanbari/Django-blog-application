@@ -6,7 +6,7 @@ def post_list(request):  # request: the template path and the variables to rende
     posts = Post.published.all()
     return render(request,
                   'blog/post/list.html',
-                  {'posts', posts})
+                  {'posts': posts})
 
 
 def post_detail(request, year, month, day, post):
