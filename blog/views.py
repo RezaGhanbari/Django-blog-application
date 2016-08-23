@@ -11,7 +11,7 @@ def post_list(request):  # request: the template path and the variables to rende
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,
-                             status = 'published',
+                             status='published',
                              publish__year=year,
                              publish__month=month,
                              publish__day=day)
