@@ -15,6 +15,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Email (SMTP SERVER)
+
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_HOST_USER = 'rgh1994@yahoo.com'
+EMAIL_HOST_PASSWORD = 'R_E_Z_A1373'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+
 
 # Application definition
 
