@@ -7,8 +7,8 @@ from django.core.urlresolvers import reverse
 class PublishedManager(models.Manager):
     def get_query(self):
         return super(PublishedManager,
-                     self).get_queryset()\
-                          .filter(status='published')
+                     self).get_queryset() \
+            .filter(status='published')
 
 
 class Post(models.Model):
@@ -16,16 +16,16 @@ class Post(models.Model):
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
-    title   = models.CharField(max_length=250)
-    slug    = models.SlugField(max_length=250,
+    title = models.CharField(max_length=250)
+    slug = models.SlugField(max_length=250,
                             unique_for_date='publish')
-    author  = models.ForeignKey(User,
+    author = models.ForeignKey(User,
                                related_name='blog_posts')
-    body    = models.TextField()
+    body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    status  = models.CharField(max_length=10,
+    status = models.CharField(max_length=10,
                               choices=STATUS_CHOICES,
                               default='draft')
     objects = models.Manager()  # default manager
@@ -42,9 +42,26 @@ class Post(models.Model):
     and day with leading zeros. We will use the get_absolute_url() method in
     our templates.
     '''
+
     def get_absolute_url(self):
         return reverse('blog:post_detail',
                        args=[self.publish.year,
                              self.publish.strftime('%m'),
                              self.publish.strftime('%d'),
                              self.slug])
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments')  # Many to One ralationship
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created',)
+
+    def __str__(self):
+        return 'Comment by {} on {}'.format(self.name, self.post)
