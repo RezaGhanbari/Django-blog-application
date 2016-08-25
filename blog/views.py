@@ -13,7 +13,7 @@ the variables to render the given template
 
 def post_list(request):
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 3) # 3 posts in each page
+    paginator = Paginator(object_list, 3)  # 3 posts in each page
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
@@ -57,13 +57,11 @@ def post_detail(request, year, month, day, post):
             new_comment.post = post
             # save the comment to the database
             new_comment.save()
-        else:
-            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
 
-        return render(request, 'blog/post/detail.html',
-                      {'post': post,
-                      'comments': comments,
-                      'comment_form': comment_form})
+    return render(request, 'blog/post/detail.html',
+                  {'post': post, 'comments': comments, 'comment_form': comment_form})
 
 
 def post_share(request, post_id):
@@ -77,14 +75,13 @@ def post_share(request, post_id):
         form = EmailPostForm(request.POST)
 
         if form.is_valid():
-
             # Form fields passed validation
             cd = form.cleaned_data
 
             post_url = request.build_absolute_uri(post.get_absolute_url())
-            subject  = '{} ({}) recommends you reeding "{}"'.format(cd['name'], cd['email'], post.title)
-            message  = 'Read "{}" at {}\n\n{}\'s comments: {}'.format(post.title, post_url, cd['name'], cd['comments'])
-            send_mail(subject, message, 'admin@myblog.com',[cd['to']])
+            subject = '{} ({}) recommends you reeding "{}"'.format(cd['name'], cd['email'], post.title)
+            message = 'Read "{}" at {}\n\n{}\'s comments: {}'.format(post.title, post_url, cd['name'], cd['comments'])
+            send_mail(subject, message, 'admin@myblog.com', [cd['to']])
             sent = True
     else:
         form = EmailPostForm()
