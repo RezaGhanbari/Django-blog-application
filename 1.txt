@@ -1,6 +1,0 @@
-BEGIN;
-CREATE TABLE "blog_post" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "title" varchar(250) NOT NULL, "slug" varchar(250) NOT NULL, "body" text NOT NULL, "publish" datetime NOT NULL, "created" datetime NOT NULL, "updated" datetime NOT NULL, "status" varchar(10) NOT NULL, "author_id" integer NOT NULL REFERENCES "auth_user" ("id"));
-CREATE INDEX "blog_post_2dbcba41" ON "blog_post" ("slug");
-CREATE INDEX "blog_post_4f331e2f" ON "blog_post" ("author_id");
-
-COMMIT;
