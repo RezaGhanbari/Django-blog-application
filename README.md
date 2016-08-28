@@ -1,5 +1,5 @@
 # Django blog application
-This is a Django/ReactJs blog application
+This is a Django blog application
 
 
 ## Features
