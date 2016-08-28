@@ -1,3 +1,4 @@
+haystack
 django==1.8.6
 pytz
 django-taggit==0.17.1

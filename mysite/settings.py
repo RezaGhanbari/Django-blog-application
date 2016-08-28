@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'haystack',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +69,14 @@ TEMPLATES = [
         },
     },
 ]
+
+
+HAYSTACK_CONNECTIONS = {
+ 'default': {
+ 'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+ 'URL': 'http://127.0.0.1:8983/solr/blog'
+ },
+}
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
