@@ -4,11 +4,18 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="4">
+          <list size="11">
             <item index="0" class="java.lang.String" itemvalue="django" />
             <item index="1" class="java.lang.String" itemvalue="django-taggit" />
             <item index="2" class="java.lang.String" itemvalue="markdown" />
             <item index="3" class="java.lang.String" itemvalue="haystack" />
+            <item index="4" class="java.lang.String" itemvalue="Django" />
+            <item index="5" class="java.lang.String" itemvalue="pysolr" />
+            <item index="6" class="java.lang.String" itemvalue="pkg-resources" />
+            <item index="7" class="java.lang.String" itemvalue="pytz" />
+            <item index="8" class="java.lang.String" itemvalue="requests" />
+            <item index="9" class="java.lang.String" itemvalue="Markdown" />
+            <item index="10" class="java.lang.String" itemvalue="django-haystack" />
           </list>
         </value>
       </option>

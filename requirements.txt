@@ -1,4 +1,8 @@
-haystack
-django==1.8.6
-pytz
+Django==1.8.6
+django-haystack==2.4.0
 django-taggit==0.17.1
+Markdown==2.6.2
+pkg-resources==0.0.0
+pysolr==3.5.0
+pytz==2016.6.1
+requests==2.11.1
