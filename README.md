@@ -2,9 +2,6 @@
 This is a Django/ReactJs blog application
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 #### Features
 ######• Comment system
 ######• Sharing posts by e-mail
@@ -55,7 +52,4 @@ This is a Django/ReactJs blog application
 ##### 1- Clone into your workspace: git clone
 ##### 2- python manage.py migrate (inside root directory)
 ##### 3- python manage.py runserver ( see 127.0.0.1:8000/blog/)
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> master
+
