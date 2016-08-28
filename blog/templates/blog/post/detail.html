@@ -3,30 +3,33 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
+    <div class="container-fluid">
+    <h1 class="text-center text-primary">{{ post.title }}</h1>
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
     {{ post.body|markdown }}
-    <p>
+    <button class="btn btn-xs btn-success">
         <a href="{% url "blog:post_share" post.id %}">
         Share this post
         </a>
-    </p>
-
-    <h2>Similar posts</h2>
+    </button>
+    <br />
+    <br />
+    <br />
+    <h4 class="container-fluid">Similar posts</h4>
         {% for post in similar_posts %}
-    <p>
-        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-    </p>
-    {% empty %}
-        There are no similar posts yet.
+        <p class="container-fluid">
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </p>
+        {% empty %}
+            <p class="container-fluid text-info">There are no similar posts yet.</p>
     {% endfor %}
-
+    <hr />
     {% with comments.count as total_comments %}
-        <h2>
+        <h5 class="text-info container-fluid pull-right">
             {{ total_comments }} comment{{ total_comments|pluralize }}
-        </h2>
+        </h5>
     {% endwith %}
 
     {% for comment in comments %}
@@ -41,11 +44,12 @@
     {% if new_comment %}
         <h2>Your comment has been added.</h2>
     {% else %}
-        <h2>Add a new comment</h2>
+        <h3 class="text-muted">Add a new comment</h3>
         <form action="." method="post">
             {{ comment_form.as_p }}
             {% csrf_token %}
             <p><input type="submit" value="Add comment"></p>
         </form>
     {% endif %}
+    </div>
 {% endblock %}
