@@ -38,5 +38,5 @@ Simple Django blog application
 ##### 7- Put content of solr directory inside the resources directory of solr-4.10.4/example .
 
 
-### Contact Deveoper
+### Contact Developer
 rezapython@gmail.com
