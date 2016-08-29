@@ -1,5 +1,5 @@
 # Django blog application
-This is a Django/ReactJs blog application
+This is a Django blog application
 
 
 ## Features
@@ -23,11 +23,17 @@ This is a Django/ReactJs blog application
 
 
 ## How to use
+<<<<<<< HEAD
 ##### 1- Clone into your workspace: git clone
 ##### 2- create a virtualenv
 ##### 3- install project requirements (pip install -r requirements.txt)
 ##### 4- python manage.py migrate (inside root directory)
 ##### 5- python manage.py runserver ( see 127.0.0.1:8000/blog/)
+=======
+##### 1- Clone into your workspace: git clone https://github.com/RezaGhanbari/Django-blog-application.git
+##### 2- python manage.py migrate (inside root directory)
+##### 3- python manage.py runserver
+>>>>>>> master
 
 
 ## Solr setup
