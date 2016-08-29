@@ -2,10 +2,6 @@
 This is a Django/ReactJs blog application
 
 
-## Demo
-https://evening-atoll-59049.herokuapp.com/
-
-
 ## Features
 #####• Comment system
 #####• Sharing posts by e-mail
