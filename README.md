@@ -1,5 +1,5 @@
 # Django blog application
-This is a Django blog application
+Simple Django blog application 
 
 
 ## Features
@@ -36,3 +36,7 @@ This is a Django blog application
 ##### 5- Create a new core
 ##### 6- Inside the example directory within the solr-4.10.4/ directory, create a new directory and name it blog . Then put solr files of project inside that
 ##### 7- Put content of solr directory inside the resources directory of solr-4.10.4/example .
+
+
+### Contact Deveoper
+rezapython@gmail.com
